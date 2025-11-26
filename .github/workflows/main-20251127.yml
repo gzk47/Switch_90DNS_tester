@@ -1,0 +1,22 @@
+name: Build & Release
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64:latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - id: get_version
+        run: |
+          VERSION=$(grep -E '^APP_VERSION\s+:=' Makefile | sed 's/APP_VERSION\s\+:=//; s/^\s*//; s/\s*$//')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+      - run: make -j2
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_version.outputs.version }}
+          name: "${{ github.event.repository.name }} v${{ steps.get_version.outputs.version }}"
+          files: ${{ github.event.repository.name }}.nro
+          body: "Version ${{ steps.get_version.outputs.version }}\nCommit: ${{ github.sha }}\nMessage: Manual release"
