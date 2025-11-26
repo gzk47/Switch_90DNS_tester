@@ -43,9 +43,9 @@ SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	include
 
-APP_VERSION := 1.0.4
+APP_VERSION := 1.0.5
 APP_TITLE   := 90DNS Testing Utility
-APP_AUTHOR  := Nexrem
+APP_AUTHOR  := Nexrem , gzk_47
 ICON        := appicon.jpg
 
 #---------------------------------------------------------------------------------

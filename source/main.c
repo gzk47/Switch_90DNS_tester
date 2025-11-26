@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 
 void checkHostnames() 
 {
-    printf("90DNS Testing Utility v1.0.4\n\n");
+    printf("90DNS Testing Utility v1.0.5 gzk_47\n\n");
 
     // Check if system says we're connected to a network (wifi or ethernet)
     Result net_rc = nifmGetInternetConnectionStatus(NULL, NULL, NULL);
@@ -94,7 +94,7 @@ void checkHostnames()
         }
 
         // Reprint hostname with changed color
-        printf("\x1b[%dD%s\n" CONSOLE_RESET, console->cursorX-2, hostnames[i]);
+        printf("\x1b[%dD%s\n" CONSOLE_RESET, console->cursorX-3, hostnames[i]);
 
         consoleUpdate(console);
     }

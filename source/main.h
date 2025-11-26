@@ -13,7 +13,6 @@ void checkHostnames();
 // List of hostnames to test
 const char *hostnames[] = {
     "nintendo.com",
-    "nintendo.com",
     "nintendo.net",
     "nintendo.jp",
     "nintendo.co.jp",
@@ -43,6 +42,7 @@ const char *hostnames[] = {
     "nintendo.co.za",
     "nintendo.se",
     "nintendo.ch",
+    "nintendo.pl",
     "nintendoswitch.cn",
     "nintendoswitch.com.cn",
     "nintendoswitch.com",
